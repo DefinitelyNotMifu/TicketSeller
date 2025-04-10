@@ -128,17 +128,24 @@
                             >
                         </li>
 
-                        <li class="navbar__item">
+                        <li class="navbar__item" id="seller">
                             <a href="./seller.html" class="navbar__item--link"
                                 >Bán vé</a
                             >
                         </li>
 
-                        <li class="navbar__item">
+                        <li class="navbar__item" id="manager">
                             <a
                                 href="./statistics.html"
                                 class="navbar__item--link"
                                 >Thống kê</a
+                            >
+                        </li>
+                        <li class="navbar__item" id="customer">
+                            <a
+                                href="./statistics.html"
+                                class="navbar__item--link"
+                                >Tìm kiếm</a
                             >
                         </li>
                     </ul>
@@ -310,39 +317,16 @@
                                     <option value="" disabled selected>
                                         Chọn
                                     </option>
-                                    <option value="donor">
-                                        Người Đóng Góp
+                                    <option value="customer">Khách Hàng</option>
+                                    <option value="seller">
+                                        Nhân Viên Bán Vé
                                     </option>
-                                    <option value="recipient">
-                                        Người Cần Hỗ Trợ
-                                    </option>
-                                    <option value="organization">
-                                        Tổ Chức Từ Thiện
-                                    </option>
+                                    <option value="manager">Quản Lý</option>
                                 </select>
                                 <span class="form-message"></span>
                             </div>
 
-                            <!-- File upload container for 'organization' role -->
-                            <div
-                                class="form-group"
-                                id="uploadContainer"
-                                style="display: none"
-                            >
-                                <label
-                                    for="organizationCertificate"
-                                    class="form-label"
-                                    >Tải lên chứng nhận tổ chức</label
-                                >
-                                <input
-                                    id="organizationCertificate"
-                                    name="organizationCertificate"
-                                    type="file"
-                                    class="send-control"
-                                    accept="image/*"
-                                />
-                                <span class="form-message"></span>
-                            </div>
+                           
 
                             <div class="form-group">
                                 <label for="password" class="form-label"
@@ -380,37 +364,7 @@
                             <button class="form-submit">Đăng ký</button>
                         </form>
                     </div>
-                    <!-- Form OTP sẽ hiển thị sau khi gửi OTP -->
-                    <div
-                        class="form-group"
-                        id="otp-group"
-                        style="display: none"
-                    >
-                        <label for="otp" class="form-label">Nhập mã OTP</label>
-                        <input
-                            id="otp"
-                            name="otp"
-                            type="text"
-                            placeholder="Nhập mã OTP"
-                            class="form-control"
-                            required
-                            maxlength="6"
-                            pattern="\d*"
-                        />
-                        <span class="form-message"></span>
-                        <button
-                            class="form-submit"
-                            id="opt-btn"
-                            type="button"
-                            onclick="verifyOTP(event)"
-                        >
-                            Xác thực OTP
-                        </button>
-                    </div>
-
-                    <!-- reCAPTCHA -->
-                    <div id="recaptcha-container"></div>
-                </div>
+                   
             </div>
         </main>
 

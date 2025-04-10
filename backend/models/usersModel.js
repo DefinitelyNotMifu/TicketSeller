@@ -43,20 +43,6 @@ const userSchema = new mongoose.Schema(
             type: Boolean,
             default: false,
         },
-        isLicensedOrganization: {
-            type: Boolean,
-            default: false,
-            required: function () {
-                return this.role === "organization";
-            },
-        },
-        organizationCertificate: {
-            type: String,
-            default: false,
-            required: function () {
-                return this.role === "organization";
-            },
-        },
     },
     { timestamps: true }
 );
