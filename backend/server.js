@@ -1,39 +1,27 @@
-const express = require("express");
-const cors = require("cors");
-const dotenv = require("dotenv");
-const mongoose = require("mongoose");
-const cookieParser = require("cookie-parser");
-const authRoute = require("./routes/auth");
-const userRoute = require("./routes/user");
+const express = require('express');
+const cors = require('cors');
+const path = require('path');
 
-dotenv.config();
 const app = express();
 
-mongoose
-    .connect(process.env.MONGO_URL)
-    .then(() => {
-        console.log("Connect to MongoDB Atlas successfully!");
-    })
-    .catch((err) => {
-        console.log(err);
-        console.error("Cannot connect to MongoDB");
-    });
-
-// ENABLES CORS
+// Middleware
 app.use(cors());
-
-// COOKIE-PARSER
-app.use(cookieParser());
-
-// JSON PAYLOADS
 app.use(express.json());
+app.use(express.static(path.join(__dirname, '../frontend')));
 
-// ROUTES
-app.use("/auth", authRoute);
-app.use("/user", userRoute);
+// Routes
+const authRoutes = require('./routes/auth');
+const showtimeRoutes = require('./routes/showtimes');
 
-// START SERVER
-const port = process.env.PORT || 3000;
-app.listen(port, () => {
-    console.log(`Server is running on port ${port}`);
+app.use('/api/auth', authRoutes);
+app.use('/api/showtimes', showtimeRoutes);
+
+// Serve frontend
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '../frontend/pages/index.html'));
+});
+
+const PORT = 3000;
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
 });

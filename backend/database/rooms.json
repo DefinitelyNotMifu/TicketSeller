@@ -1,0 +1,28 @@
+{
+  "rooms": [
+    {
+      "id": 1,
+      "name": "Phòng 1",
+      "type": 1,
+      "seats": 100
+    },
+    {
+      "id": 2,
+      "name": "Phòng 2",
+      "type": 1,
+      "seats": 100
+    },
+    {
+      "id": 3,
+      "name": "Phòng 3",
+      "type": 2,
+      "seats": 60
+    },
+    {
+      "id": 4,
+      "name": "Phòng 4",
+      "type": 2,
+      "seats": 60
+    }
+  ]
+}

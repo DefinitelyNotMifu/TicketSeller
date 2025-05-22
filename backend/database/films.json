@@ -1,0 +1,18 @@
+{
+  "films": [
+    {
+      "id": 1,
+      "title": "Avengers: Endgame",
+      "duration": 180,
+      "description": "Sau những sự kiện tàn phá của Avengers: Infinity War, vũ trụ đang trong tình trạng đổ nát.",
+      "image": "avengers.jpg"
+    },
+    {
+      "id": 2,
+      "title": "The Lion King",
+      "duration": 118,
+      "description": "Câu chuyện về Simba, chú sư tử con phải đối mặt với những thử thách để trở thành vua.",
+      "image": "lionking.jpg"
+    }
+  ]
+}
